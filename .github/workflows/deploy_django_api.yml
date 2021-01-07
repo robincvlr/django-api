@@ -6,7 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
     - uses: actions/checkout@v2
+
     - uses: azure/docker-login@v1
       with:
         login-server: ${{ secrets.REGISTRY_NAME }}.azurecr.io
@@ -15,3 +17,13 @@ jobs:
     - run: |
         docker build -t ${{ secrets.REGISTRY_NAME }}.azurecr.io/django-api:${{ github.sha }} .
         docker push ${{ secrets.REGISTRY_NAME }}.azurecr.io/django-api:${{ github.sha }}
+
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: django-rappers
+        images: ${{ secrets.REGISTRY_NAME }}.azurecr.io/django-api:${{ github.sha }}
+        app-settings-json: ${{ secrets.APP_SETTINGS }}
+
+    - name: Azure logout
+      run: |
+        az logout
