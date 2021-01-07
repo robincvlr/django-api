@@ -7,6 +7,17 @@ from rest_framework.permissions import IsAuthenticated
 
 
 @api_view(['GET'])
+def availability(request):
+    """
+    :param request: HTTP request
+    :return:        Rappers as JSON
+    """
+    if request.method == 'GET':
+        status_content = {"status": "Booska API available"}
+        return JsonResponse(status_content)
+
+
+@api_view(['GET'])
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def rappers(request):
@@ -24,7 +35,7 @@ def rappers(request):
 def rapper(request, name):
     """
     :param request: HTTP request
-    :param name:    Rapper name as key
+    :param name:    Rapper name
     :return:        Rapper as JSON
     """
     if request.method == 'GET':
