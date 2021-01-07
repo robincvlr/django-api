@@ -16,4 +16,4 @@
 `docker build -t django-api .`
 
 ## Run container
-`docker run -d -p 8000:80 django-api django-api-container`
+`docker run -p 8000:80 --name django-api-container --detach django-api`
