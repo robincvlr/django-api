@@ -16,4 +16,10 @@
 `docker build -t django-api .`
 
 ## Run container
-`docker run -p 8000:80 --name django-api-container --detach django-api`
+```
+docker run \
+--env SECRET_KEY='${YOUR_SECRET_KEY}' \
+-p 8000:80 \
+--name django-api-container \
+--detach django-api
+```
