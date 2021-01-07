@@ -12,7 +12,7 @@
 ## Run server
 `./manage.py runserver`
 
-## Build containe
+## Build container
 `docker build -t django-api .`
 
 ## Run container
