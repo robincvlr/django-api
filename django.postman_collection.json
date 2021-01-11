@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "5efff0c5-5e49-4e36-a8d4-53a6c0651db9",
+		"name": "django",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0_STATUS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}:{{PORT}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "{{PORT}}"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1_RAPPERS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}:{{PORT}}/rappers",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"rappers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_RAPPER",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}:{{PORT}}/rapper/Dinos",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"rapper",
+						"Dinos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
