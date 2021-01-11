@@ -1,4 +1,5 @@
 # serverless-api
+Django API with token authentication on Azure App Services
 
 ## Migrate DB
 `./manage.py migrate`
