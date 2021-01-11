@@ -20,7 +20,7 @@ Django API with token authentication on Azure App Services
 ```
 docker run \
 --env SECRET_KEY='${YOUR_SECRET_KEY}' \
---publish 8000:80 \
+--publish 8000:8000 \
 --name django-api-container \
 --detach django-api
 ```
