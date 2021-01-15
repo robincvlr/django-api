@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "azuredjangocluster-279f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "azuredjangocluster-279f"
+  template:
+    metadata:
+      labels:
+        app: "azuredjangocluster-279f"
+    spec:
+      containers:
+        - name: "azuredjangocluster-279f"
+          image: "unicorn.azurecr.io/azuredjangocluster"
+          ports:
+          - containerPort: 80
