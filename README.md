@@ -1,4 +1,4 @@
-# serverless-api
+# django-api
 Django API with token authentication on Azure App Services
 
 ## Migrate DB
